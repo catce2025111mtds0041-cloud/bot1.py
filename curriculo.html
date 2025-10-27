@@ -1,0 +1,180 @@
+<!--
+  Portfólio em HTML (arquivo único)
+  Autor: Samuel Victor Costa de Sousa
+  Observações: este arquivo é responsivo, sem dependências externas.
+  Para publicar: envie para o GitHub (gh-pages) ou copie para um servidor estático.
+-->
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio | Samuel Victor</title>
+  <meta name="description" content="Portfólio de Samuel Victor - Estagiário Front-End em formação. HTML, CSS, projetos em Python e SQL." />
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --radius:12px; --max-width:980px; --gap:20px; --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:var(--ff);background:linear-gradient(180deg,var(--bg),#071029);color:#e6eef8}
+    a{color:var(--accent);text-decoration:none}
+
+    .wrap{max-width:var(--max-width);margin:36px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:16px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,#0ea5a4,#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#031126;font-size:28px}
+    h1{margin:0;font-size:22px}
+    .sub{color:var(--muted);margin-top:6px;font-size:14px}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:var(--gap);margin-top:22px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.avatar{width:72px;height:72px;font-size:20px}}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px}
+    .contact a{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;background:var(--glass);border-radius:10px;margin-right:8px}
+
+    h2{margin:0 0 10px 0;font-size:16px}
+    ul.skills{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+    ul.skills li{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;font-size:14px}
+
+    .projects{display:flex;flex-direction:column;gap:12px}
+    .proj{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .proj h3{margin:0;font-size:15px}
+    .proj p{margin:6px 0 0 0;color:var(--muted);font-size:14px}
+    .proj .meta{margin-top:8px;font-size:13px;color:var(--muted)}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small utilities */
+    .tag{display:inline-block;background:rgba(6,182,212,0.12);color:var(--accent);padding:6px 8px;border-radius:8px;font-weight:600;font-size:13px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#022; font-weight:700}
+
+    nav.top{display:flex;gap:12px;margin-left:auto}
+    .top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+    /* floating quick actions for mobile */
+    .mobile-actions{display:none}
+    @media (max-width:600px){.mobile-actions{display:flex;gap:10px;margin-top:12px}}
+
+    /* simple scroll reveal (progressive) */
+    .sr{opacity:0;transform:translateY(8px);transition:all 480ms cubic-bezier(.2,.9,.3,1)}
+    .sr.visible{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="avatar">SV</div>
+      <div>
+        <h1>Samuel Victor Costa de Sousa</h1>
+        <div class="sub">Estagiário em Front‑End • Técnico em Desenvolvimento de Sistemas (IFPI) • Teresina, PI</div>
+        <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+          <div class="tag">Em formação • 2º período</div>
+          <nav class="top">
+            <a href="#projetos">Projetos</a>
+            <a href="#skills">Skills</a>
+            <a href="#contato">Contato</a>
+          </nav>
+        </div>
+      </div>
+      <div class="top-right">
+        <a class="btn" href="https://github.com/catce2025111mtds0041-cloud" target="_blank" rel="noopener">Ver GitHub</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section>
+        <div class="card" style="margin-bottom:16px">
+          <h2>Sobre mim</h2>
+          <p style="color:var(--muted);margin-top:8px">Sou estudante de Técnico em Desenvolvimento de Sistemas no IFPI, buscando uma oportunidade de estágio em Front‑End. Tenho conhecimento em HTML5 e CSS3, e experiência prática com projetos em Python, modelagem de banco de dados (MySQL) e criação de chatbots. Estou em processo de aprendizado de JavaScript e práticas modernas de desenvolvimento front‑end.</p>
+        </div>
+
+        <div id="projetos" class="card">
+          <h2>Projetos</h2>
+          <div class="projects">
+
+            <article class="proj sr">
+              <h3>Sistema de Controle de Notas (Python)</h3>
+              <p>Aplicação em Python para cadastro de alunos, armazenamento de notas e cálculo de médias. Projeto focado em lógica, tratamento de entradas e geração de relatórios simples.</p>
+              <div class="meta">Tecnologias: Python • POO • Manipulação de arquivos</div>
+            </article>
+
+            <article class="proj sr">
+              <h3>Cofre Eletrônico (POO)</h3>
+              <p>Simulação de cofre com autenticação por senha, controle de tentativas e estados (aberto/fechado). Projeto desenvolvido para treinar POO e testes.</p>
+              <div class="meta">Tecnologias: Python • Orientação a objetos • Testes unitários</div>
+            </article>
+
+            <article class="proj sr">
+              <h3>Consultas SQL - "Coleção CD"</h3>
+              <p>Série de consultas SQL para manipulação e extração de dados em um banco de dados de coleção de CDs — inclui filtros, ordenações e agregações (total gasto).</p>
+              <div class="meta">Tecnologias: MySQL • SQL (SELECT, JOIN, ORDER BY, GROUP BY)</div>
+            </article>
+
+            <article class="proj sr">
+              <h3>Chatbot simples</h3>
+              <p>Protótipo de chatbot com respostas pré-configuradas para dúvidas frequentes — usado para estudo de lógica conversacional e integração com sistemas simples.</p>
+              <div class="meta">Tecnologias: Python • Lógica condicional • Protótipo</div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2 id="skills">Habilidades</h2>
+          <ul class="skills">
+            <li>HTML5</li>
+            <li>CSS3 (Flexbox, Grid, responsivo)</li>
+            <li>Python (funções, POO, testes)</li>
+            <li>MySQL (consultas e modelagem)</li>
+            <li>Git & GitHub</li>
+            <li>Boas práticas (semântica e acessibilidade)</li>
+            <li>Aprendendo JavaScript</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card contact">
+          <h2>Contato</h2>
+          <p style="color:var(--muted)">Teresina – PI</p>
+          <p style="margin:10px 0">📧 <a href="mailto:catce.2025111mtds0041@aluno.ifpi.edu.br">catce.2025111mtds0041@aluno.ifpi.edu.br</a></p>
+          <p>📱 <a href="tel:+5586999811026">(86) 99981‑1026</a></p>
+          <p style="margin-top:8px"><strong>GitHub:</strong> <a href="https://github.com/catce2025111mtds0041-cloud" target="_blank" rel="noopener">github.com/catce2025111mtds0041-cloud</a></p>
+
+          <div style="margin-top:12px">
+            <a class="btn" href="https://github.com/catce2025111mtds0041-cloud" target="_blank" rel="noopener">Ver repositórios</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Resumo rápido</h2>
+          <p style="color:var(--muted);font-size:14px;margin:8px 0">Busco estágio em Front‑End para aplicar conhecimentos em HTML/CSS e aprender JavaScript na prática. Pró‑atividade, organização e vontade de evoluir.</p>
+
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="tag" href="#projetos">Ver projetos</a>
+            <a class="tag" href="#contato">Entrar em contato</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer id="contato">
+      <p>© Samuel Victor Costa de Sousa — Portfólio criado para candidatura a estágio em Front‑End • <a href="https://github.com/catce2025111mtds0041-cloud" target="_blank" rel="noopener">github.com/catce2025111mtds0041-cloud</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // pequeno script para revelar elementos com efeito
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const items = document.querySelectorAll('.sr');
+      const obs = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible') });
+      },{threshold:0.12});
+      items.forEach(i=>obs.observe(i));
+    });
+  </script>
+</body>
+</html>
